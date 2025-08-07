@@ -30,7 +30,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch('https://task-tracker-lite-a119c83c03a7.herokuapp.com/api/tasks', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -78,7 +78,7 @@ const handleLogout = () => {
   const handleAddTask = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch('https://task-tracker-lite-a119c83c03a7.herokuapp.com/api/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const handleLogout = () => {
 
   const handleUpdateTask = async (taskId, updatedFields) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const res = await fetch(`https://task-tracker-lite-a119c83c03a7.herokuapp.com/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

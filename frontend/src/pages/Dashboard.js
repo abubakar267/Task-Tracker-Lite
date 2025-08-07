@@ -160,7 +160,10 @@ const handleLogout = () => {
       <div className="dashboard-header">
   <h1>Task Dashboard</h1>
   <div>
-    <OverDue/>
+    <OverDue setTasks={setTasks}/>
+    <button className="logout-button" onClick={fetchTasks}>
+      All Tasks
+    </button>
       <button className="logout-button" onClick={handleLogout}>Logout</button>
         
   </div>

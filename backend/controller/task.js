@@ -57,13 +57,14 @@ const updateTask = async (req, res) => {
   }
 };
 
-// Get overdue tasks
 const getOverdueTasks = async (req, res) => {
   try {
     const today = new Date();
+    today.setHours(0, 0, 0, 0); // set time to 00:00:00
+
     const tasks = await Task.find({
       userId: req.user.id,
-      dueDate: { $lt: today },
+      dueDate: { $lt: today }, // now compares only date part
       status: { $ne: 'completed' }
     });
 

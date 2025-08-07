@@ -96,6 +96,10 @@ h1 {
   background-color: #f9f9f9;
 }
 
+.logout-button{
+  margin-left: 10px;
+}
+
 .task-card button {
   margin-top: 10px;
   margin-right: 8px;

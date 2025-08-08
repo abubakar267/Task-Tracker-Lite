@@ -70,7 +70,7 @@ PORT=5000
 
 
 Note : 
-1)Login feature has also been implemented.
+1)Logout feature has also been implemented.
 2)Overdue Button shows only those tasks that are overdue.
 3)The app is not responsive for mobile phones as I needed more time for that.
 

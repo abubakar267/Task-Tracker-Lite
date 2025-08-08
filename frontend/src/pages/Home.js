@@ -7,11 +7,13 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title">Welcome to My Project</h1>
-      <p className="home-subtitle">Please sign in or sign up to continue</p>
-      <div className="home-buttons">
-        <button onClick={() => navigate('/login')}>Sign In</button>
-        <button onClick={() => navigate('/signup')}>Sign Up</button>
+      <div className="home-box">
+        <h1 className="home-title">Task Manager</h1>
+        <p className="home-subtitle">Manage your tasks easily and efficiently</p>
+        <div className="home-buttons">
+          <button onClick={() => navigate('/login')}>Sign In</button>
+          <button onClick={() => navigate('/signup')}>Sign Up</button>
+        </div>
       </div>
     </div>
   );

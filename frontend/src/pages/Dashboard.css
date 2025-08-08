@@ -64,10 +64,10 @@ h1 {
   transform: translateY(-3px);
 }
 
-.task-card.overdue-red {
+/* .task-card.overdue-red {
   border-left-color: #e53935;
   background-color: #ffeaea;
-}
+} */
 
 .task-card h3 {
   margin: 0 0 8px;
@@ -137,9 +137,8 @@ h1 {
 
 .task-card.overdue-red {
   background-color: #ffe5e5;
-  border-left: 5px solid red;
+  border-left: 5px solid #e53935;
 }
-
 .task-box {
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -215,13 +214,20 @@ h1 {
   margin-top: 8px;
 }
 
+/* Edit form inline error */
+.edit-error {
+  color: #d93025; /* red */
+  margin-top: 8px;
+  font-weight: 600;
+}
+
 /* Dynamically colored badges */
 .badge-completed {
   background-color: #4caf50; /* green */
 }
 
 .badge-overdue {
-  background-color: #2196f3;/* red */
+  background-color: #e53935;/* red */
 }
 
 .badge-due-today {
@@ -253,4 +259,27 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: start;
+}
+
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-button {
+  background-color: #e53935;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #c62828;
 }

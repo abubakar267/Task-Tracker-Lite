@@ -7,15 +7,18 @@ const Login = () => {
     password: ''
   });
 
+  const [error, setError] = useState('');
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://task-tracker-lite-a119c83c03a7.herokuapp.com/api/login', {
+      const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -24,26 +27,21 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        console.log('Login successful:', data);
-        alert('Login successful');
         localStorage.setItem('token', data.token);
+        localStorage.setItem('userName', data.username);
         window.location.href = '/dashboard';
-        console.log(data.username);
-        
-        localStorage.setItem("userName", data.username);
-        // Optionally: store token in localStorage, navigate, etc.
       } else {
-        alert(data.message || 'Invalid username or password');
+        setError(data.message || 'Invalid username or password');
       }
     } catch (err) {
-      console.error('Login error:', err);
-      alert('Server error. Please try again later.');
+      setError('Server error. Please try again later.');
     }
   };
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h1 className="main-heading">Task Manager</h1>
+      <h2 className="sub-heading">Login to your account</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
@@ -63,7 +61,13 @@ const Login = () => {
           required
         />
 
+        {error && <div className="error-text">{error}</div>}
+
         <button type="submit">Login</button>
+
+        <p className="redirect-text">
+          Don’t have an account? <a href="/signup">Sign up</a>
+        </p>
       </form>
     </div>
   );

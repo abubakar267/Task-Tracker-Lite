@@ -4,7 +4,7 @@ import './global.css';
 const OverDue = ({ setTasks }) => {
   const handleClick = async () => {
     try {
-      const response = await fetch('https://task-tracker-lite-a119c83c03a7.herokuapp.com/api/tasks/overdue', {
+      const response = await fetch('http://localhost:5000/api/tasks/overdue', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
